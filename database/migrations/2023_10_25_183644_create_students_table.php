@@ -17,8 +17,8 @@ return new class extends Migration
             $table->date('birth_date',);
             $table->char('gender', 1);
 
-            $table->unsignedBigInteger('class_id');
-            $table->foreign('class_id')->references('id')->on('classes');
+            $table->unsignedBigInteger('course_class_id');
+            $table->foreign('course_class_id')->references('id')->on('course_classes');
 
             $table->timestamps();
         });
