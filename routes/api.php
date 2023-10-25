@@ -23,7 +23,4 @@ Route::get('/students', [StudentController::class, 'index'])->name('students.ind
 Route::get('/students/{student}', [StudentController::class, 'show']);
 Route::post('/students', [StudentController::class, 'store']);
 Route::put('/students/{student}', [StudentController::class, 'update']);
-
-Route::delete('/students/{id}', function (){
-    echo 'Deleção de aluno';
-});
+Route::delete('/students/{student}', [StudentController::class, 'destroy']);

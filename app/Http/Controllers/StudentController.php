@@ -49,14 +49,14 @@ class StudentController extends Controller
     public function update(StudentRequest $request, Student $student)
     {
         $data = $request->all();
-        response($student->update($data), 200);
+        return response($student->update($data), 200);
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Student $student)
     {
-        //
+        return $student->deleteOrFail();
     }
 }
