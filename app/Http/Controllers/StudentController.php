@@ -20,9 +20,9 @@ class StudentController extends Controller
 
         //return response('{"name": "Danilo"}', 201, ['Content-type' => 'application/json']);
 
-        //return Student::all();
+        return Student::all();
 
-        abort(404, 'Recurso não encontrado');
+        //abort(404, 'Recurso não encontrado');
     }
 
     /**
@@ -36,9 +36,9 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Student $student)
     {
-        //
+        return $student;
     }
 
     /**

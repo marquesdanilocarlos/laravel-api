@@ -20,10 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('/students', [StudentController::class, 'index'])->name('students.index');
-
-Route::get('/students/{id}', function(){
-    echo 'Dados do aluno';
-});
+Route::get('/students/{student}', [StudentController::class, 'show']);
 
 Route::post('/students', function(){
     echo 'Inclusão de alunos';
