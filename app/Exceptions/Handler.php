@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -26,5 +28,33 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
+    }
+
+    public function render($request, Throwable $e)
+    {
+        if ($request->is('api/*')) {
+            if ($e instanceof ModelNotFoundException) {
+                return response(
+                    [
+                        'code' => 'register-not-found',
+                        'message' => 'O registro que vc está buscando não foi encontrado'
+                    ],
+                    404
+                );
+            }
+
+            if ($e instanceof ValidationException) {
+                return response(
+                    [
+                        'code' => 'validation-error',
+                        'message' => 'Os dados enviados são inválidos',
+                        'errors' => $e->errors()
+                    ],
+                    400
+                );
+            }
+        }
+
+        return parent::render($request, $e);
     }
 }
