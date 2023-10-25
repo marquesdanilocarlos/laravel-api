@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StudentRequest;
 use App\Models\Student;
-use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Response;
 
 class StudentController extends Controller
@@ -13,7 +13,7 @@ class StudentController extends Controller
      * Display a listing of the resource.
      * Accept: application/json
      */
-    public function index(Response $response)
+    public function index(): Collection
     {
         /*return $response->setContent('{"name": "Danilo"}')
             ->setStatusCode(201)
@@ -28,7 +28,7 @@ class StudentController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StudentRequest $request)
+    public function store(StudentRequest $request): Response
     {
         $data = $request->all();
 
@@ -38,7 +38,7 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Student $student)
+    public function show(Student $student): Student
     {
         return $student;
     }
@@ -46,7 +46,7 @@ class StudentController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(StudentRequest $request, Student $student)
+    public function update(StudentRequest $request, Student $student): Response
     {
         $data = $request->all();
         return response($student->update($data), 200);
@@ -55,7 +55,7 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Student $student)
+    public function destroy(Student $student): bool
     {
         return $student->deleteOrFail();
     }

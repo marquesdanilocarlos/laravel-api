@@ -19,8 +19,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+/*Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 Route::get('/students/{student}', [StudentController::class, 'show']);
 Route::post('/students', [StudentController::class, 'store']);
 Route::put('/students/{student}', [StudentController::class, 'update']);
-Route::delete('/students/{student}', [StudentController::class, 'destroy']);
+Route::delete('/students/{student}', [StudentController::class, 'destroy']);*/
+Route::apiResource('students', StudentController::class);

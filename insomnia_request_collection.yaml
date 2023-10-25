@@ -1,0 +1,215 @@
+_type: export
+__export_format: 4
+__export_date: 2023-10-25T23:02:44.499Z
+__export_source: insomnia.desktop.app:v8.3.0
+resources:
+  - _id: req_04c3c84d05214600896b96ccd9c71732
+    parentId: wrk_c1c94ecef4274420b6bf473b6a200b53
+    modified: 1698274893701
+    created: 1698274334616
+    url: "{{ _.base_url }}/students/6"
+    name: Deletar aluno
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_3e16d64d559842efae6ab556e757d4e5
+      - id: pair_5b83cb3150824e5291948cd9da2efe1e
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1698274334616
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_c1c94ecef4274420b6bf473b6a200b53
+    parentId: null
+    modified: 1698261938331
+    created: 1698261938331
+    name: Laravel API
+    description: ""
+    scope: collection
+    _type: workspace
+  - _id: req_4c47cd6d34f84bc3a37fed6bdb5486f4
+    parentId: wrk_c1c94ecef4274420b6bf473b6a200b53
+    modified: 1698274714768
+    created: 1698271180377
+    url: "{{ _.base_url }}/students/7"
+    name: Atualizar Aluno
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Gohan Maroto",
+        	"birth_date": "2001-02-08",
+        	"gender": "M",
+        	"course_class_id": 2
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_5406b15246d946f9adf5412f96b43c39
+      - id: pair_1ce04cbb423c4da6ada4d0e4455f448e
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1698271180377
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_5e4ce863e0af43998b344fe48bdd45c1
+    parentId: wrk_c1c94ecef4274420b6bf473b6a200b53
+    modified: 1698274661424
+    created: 1698268174865
+    url: "{{ _.base_url }}/students"
+    name: Novo Aluno
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"name": "Torentino Toretto",
+        	"birth_date": "1979-11-19",
+        	"gender": "M",
+        	"course_class_id": 2
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+        id: pair_1af77c223fda44359b0b7511bbf55794
+      - id: pair_0f8c6e4315db4eaf99dab79fc4aca500
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1698268174865
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_b9ac6c7affc44240a896a4f095e918ab
+    parentId: wrk_c1c94ecef4274420b6bf473b6a200b53
+    modified: 1698274635281
+    created: 1698266884219
+    url: "{{ _.base_url }}/students/3"
+    name: Detalhes de aluno
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_b1c28b05d0884b7ba0929bb7cd640c0e
+      - id: pair_8d3cf8e902ee4b98af41930204a63f89
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1698266884219
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_975a73a487a547f6af01797f6b7aeddd
+    parentId: wrk_c1c94ecef4274420b6bf473b6a200b53
+    modified: 1698274624833
+    created: 1698261956304
+    url: localhost:8000/api/students
+    name: Obter alunos
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers:
+      - name: User-Agent
+        value: insomnia/8.3.0
+        id: pair_7f7a34946e0c42c7bb38320605b48baa
+      - id: pair_adb6990f7d0d41ebb25a95e862915782
+        name: Accept
+        value: application/json
+        description: ""
+    authentication: {}
+    metaSortKey: -1698261956304
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_2d90d0ea66f92b264b3b4440a671429417715f55
+    parentId: wrk_c1c94ecef4274420b6bf473b6a200b53
+    modified: 1698267910488
+    created: 1698261938333
+    name: Base Environment
+    data:
+      base_url: http://localhost:8000/api
+    dataPropertyOrder:
+      "&":
+        - base_url
+    color: null
+    isPrivate: false
+    metaSortKey: 1698261938333
+    _type: environment
+  - _id: jar_2d90d0ea66f92b264b3b4440a671429417715f55
+    parentId: wrk_c1c94ecef4274420b6bf473b6a200b53
+    modified: 1698261993656
+    created: 1698261938335
+    name: Default Jar
+    cookies:
+      - key: XSRF-TOKEN
+        value: eyJpdiI6ImVVUzlDaEVadkVsZHk4NFdXQkJKMGc9PSIsInZhbHVlIjoiNGIrcGVmcFJaamdHLzVadVVOMzZKeUo2aUdtRXdzVnBrTjJheVJ0Zmcrb0FuVFZvRVpkUERIcjQvaVo2L1owUXpyb0cvQkNYZWV6RXY0ODI1U1BvbE1xNkk0K1paZitWNVBKazN5cDRFS2twRVhWUEI2dmpRRjd5SnZBaDZPKzQiLCJtYWMiOiI5YzJmZWQ4ZTNlY2I4MDZmM2NjOTlkYzg2MjgwYzk5NTRmOWI4NTI4NzIzZTYyODVlMWYyNjhjYmUxODc0ZDc4IiwidGFnIjoiIn0%3D
+        expires: 2023-10-25T21:26:33.000Z
+        maxAge: 7200
+        domain: localhost
+        path: /
+        hostOnly: true
+        creation: 2023-10-25T19:26:33.654Z
+        lastAccessed: 2023-10-25T19:26:33.654Z
+        sameSite: lax
+        id: "35273043792036574"
+      - key: laravel_session
+        value: eyJpdiI6IlVCYklRekI4eTk1STFRNFlERkM1Qmc9PSIsInZhbHVlIjoiL2tGNi9YdENhekR0NVArY2JoWEZwVGJKa2QrUHZDYmZIZ0J0c3hTS2U0b3NSeVNscW9lRzVQUkV6YmJ4K1RXZHNEeGVMUlUxSjVRZlVFa0NGclJBNjE1bjZxT3h4bThCcmpvejRtNExRNlRpUGlUWVRhSFJrNDM0UVkwOGlXWjYiLCJtYWMiOiI0NmE4ZWI1NDMyNGQ0ZmUyYjU4ZDUyNWU5MjAwNGMwOGM1Yzc2ZGZmZjlkMTAzODk2NTFjMDdiYTUzZWFjMTJjIiwidGFnIjoiIn0%3D
+        expires: 2023-10-25T21:26:33.000Z
+        maxAge: 7200
+        domain: localhost
+        path: /
+        httpOnly: true
+        hostOnly: true
+        creation: 2023-10-25T19:26:33.656Z
+        lastAccessed: 2023-10-25T19:26:33.656Z
+        sameSite: lax
+        id: "2634952902369987"
+    _type: cookie_jar
