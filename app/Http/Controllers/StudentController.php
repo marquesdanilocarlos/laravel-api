@@ -10,6 +10,7 @@ class StudentController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * Accept: application/json
      */
     public function index(Response $response)
     {
@@ -19,7 +20,9 @@ class StudentController extends Controller
 
         //return response('{"name": "Danilo"}', 201, ['Content-type' => 'application/json']);
 
-        return Student::all();
+        //return Student::all();
+
+        abort(404, 'Recurso não encontrado');
     }
 
     /**
