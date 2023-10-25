@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StudentRequest;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -21,16 +22,17 @@ class StudentController extends Controller
         //return response('{"name": "Danilo"}', 201, ['Content-type' => 'application/json']);
 
         return Student::all();
-
         //abort(404, 'Recurso não encontrado');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StudentRequest $request)
     {
-        //
+        $data = $request->all();
+
+        return response(Student::create($data), 201);
     }
 
     /**
