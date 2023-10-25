@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,22 +19,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/alunos', function(){
-    echo 'Lista de alunos';
-});
+Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 
-Route::get('/alunos/{id}', function(){
+Route::get('/students/{id}', function(){
     echo 'Dados do aluno';
 });
 
-Route::post('/alunos', function(){
+Route::post('/students', function(){
     echo 'Inclusão de alunos';
 });
 
-Route::put('/alunos/1', function (){
+Route::put('/students/{id}', function (){
     echo 'Edição de aluno';
 });
 
-Route::delete('/alunos/1', function (){
+Route::delete('/students/{id}', function (){
     echo 'Deleção de aluno';
 });
