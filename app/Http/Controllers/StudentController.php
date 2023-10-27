@@ -47,6 +47,11 @@ class StudentController extends Controller
      */
     public function show(Student $student): StudentResource
     {
+        //Verificação do Content Negociation (tipo de dado a ser retornado de acordo com o header Accept)
+        if (request()->header('Accept') === 'application/xml') {
+            //todo implementa o método para retornar XML
+        }
+
         return new StudentResource($student);
     }
 
