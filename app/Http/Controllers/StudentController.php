@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StudentRequest;
+use App\Http\Resources\StudentResource;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Response;
@@ -40,9 +41,9 @@ class StudentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Student $student): Student
+    public function show(Student $student): StudentResource
     {
-        return $student;
+        return new StudentResource($student);
     }
 
     /**
