@@ -19,6 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
+    //Configuração de quais domínios podem acessar a API
     'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
