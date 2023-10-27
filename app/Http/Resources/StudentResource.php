@@ -21,6 +21,7 @@ class StudentResource extends JsonResource
             'gender' => $this->gender,
             'class_id' => $this->course_class_id,
             'class' => new CourseClassResourse($this->courseClass)
+            //'class' => new CourseClassResourse($this->whenLoaded('courseClass'));
         ];
     }
 }

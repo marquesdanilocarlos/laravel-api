@@ -24,6 +24,7 @@ class StudentController extends Controller
         //return response('{"name": "Danilo"}', 201, ['Content-type' => 'application/json']);
 
         $students = Student::all();
+        //$students = Student::with('courseClass')->get();
         return new StudentCollection($students);
             //->makeHidden(['gender'])
             //->makeVisible(['created_at']);
