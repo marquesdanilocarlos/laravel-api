@@ -21,7 +21,9 @@ class StudentController extends Controller
 
         //return response('{"name": "Danilo"}', 201, ['Content-type' => 'application/json']);
 
-        return Student::all();
+        return Student::all()
+            ->makeHidden(['gender'])
+            ->makeVisible(['created_at']);
         //abort(404, 'Recurso não encontrado');
     }
 
