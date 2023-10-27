@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StudentRequest;
+use App\Http\Resources\StudentCollection;
 use App\Http\Resources\StudentResource;
 use App\Models\Student;
 use Illuminate\Database\Eloquent\Collection;
@@ -14,7 +15,7 @@ class StudentController extends Controller
      * Display a listing of the resource.
      * Accept: application/json
      */
-    public function index(): Collection
+    public function index(): StudentCollection
     {
         /*return $response->setContent('{"name": "Danilo"}')
             ->setStatusCode(201)
@@ -22,9 +23,10 @@ class StudentController extends Controller
 
         //return response('{"name": "Danilo"}', 201, ['Content-type' => 'application/json']);
 
-        return Student::all()
-            ->makeHidden(['gender'])
-            ->makeVisible(['created_at']);
+        $students = Student::all();
+        return new StudentCollection($students);
+            //->makeHidden(['gender'])
+            //->makeVisible(['created_at']);
         //abort(404, 'Recurso não encontrado');
     }
 
